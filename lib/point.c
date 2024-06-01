@@ -44,7 +44,7 @@ int point_y(point* p){
 
 // verifica si el punto es un espacio movible
 int point_is_mov(point* p){
-    return p->c == SPACE || p->c == SOURCE || p->c == TARGET;
+    return (p != NULL) && (p->c == SPACE || p->c == SOURCE || p->c == TARGET);
 }
 
 // imprime el punto

@@ -49,7 +49,9 @@ int matrix_columns(matrix* m){
 
 // Permite obtener el valor de una posición de la matriz
 t_matrix_elem matrix_get(matrix* m, int row, int col){
-     return m->a[row * m->columns + col];
+    if (row < 0 || row >= m->rows || col < 0 || col >= m->columns)
+        return t_matrix_elem_default;
+    return m->a[row * m->columns + col];
 }
 
 // Permite reemplazar o asignar un elemento a la matriz
